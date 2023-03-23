@@ -4,7 +4,7 @@ const session=require("express-session");
 // const hbs=require("express-handlebars");
 // const passport=require("passport");
 // const localStrategy=require("passport-local").Strategy;
-// const bcrypt=require("bcrypt");
+const bcrypt=require("bcrypt");
 
 
 const path = require('path');
