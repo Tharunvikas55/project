@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <div class="register-photo">
+      <div class="form-container">
+        <div class="image-holder"></div>
+        <form action="/signup" method="post">
+          <h2 class="text-center"><strong>Create</strong> an account.</h2>
+
+          <!-- cus_name -->
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="text"
+              name="cus_name"
+              placeholder="Name"
+              value="<%=typeof cus_name !='undefined ? cus_name : ''%>"
+            />
+          </div>
+
+          <!-- cus_mobile_no -->
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="text"
+              name="cus_mobile_no"
+              placeholder="Mobile no"
+              value="<%=typeof cus_mobile_no !='undefined ?  cus_mobile_no : ''%>"
+            />
+          </div>
+
+          <!-- cus_address -->
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="text"
+              name="cus_address"
+              placeholder="Address"
+              value="<%=typeof cus_mobile_no !='undefined ?  cus_mobile_no : ''%>"
+            />
+          </div>
+
+          <!-- password -->
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="password"
+              name="cus_password"
+              id="cus_password"
+              placeholder="password"
+              value="<%=typeof cus_mobile_no !='undefined ?  cus_mobile_no : ''%>"
+            />
+            <span id="message1" style="color: red"> </span>
+          </div>
+
+          <!-- password -->
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="password"
+              name="cus_repassword"
+              id="cus_repassword"
+              placeholder="Re-type Password"
+              value="<%=typeof cus_mobile_no !='undefined ?  cus_mobile_no : ''%>"
+            />
+            <span id="message2" style="color: red"> </span>
+          </div>
+          <p>
+            <input
+              type="text"
+              class="form-control"
+              id="datepicker"
+              placeholder="Date-of-birth"
+              name="dob"
+            />
+          </p>
+          <input type="hidden" name="role" value="customer" />
+
+          <div class="form-group">
+            <a href="/signup"
+              ><button
+                class="btn btn-primary btn-block"
+                id="submit"
+                type="submit"
+              >
+                Sign Up
+              </button></a
+            >
+            <button class="btn btn-primary btn-block" type="reset">
+              Reset
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
+  </body>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+  />
+  <style>
+    .register-photo {
+      background: #f1f7fc;
+      padding: 80px 0;
+    }
+
+    .register-photo .image-holder {
+      display: table-cell;
+      width: auto;
+      background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPEA4ODg8QDxAQGBEXFQ0XDw8REA4QGRgXFxgXFRgYHSggJBomIBUYITEiJSkrLi4uFx8zODMsNygtLisBCgoKDg0OFxAQGy8dHSYtLS0tLS0rKy0tLS0tLS0tLS0tLS0tLS0tLS01LS0tLS0tLS0tLS0tKzctLS0tLS0tLf/AABEIALQAtAMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABAUBAwYHAv/EADkQAAICAQMCAwYFAQYHAAAAAAECAAMEBRESEyEGIjEHFDJBYZFCUVJxgbEVI1OCksE0NmJyoaKy/8QAGgEBAQEBAQEBAAAAAAAAAAAAAAECAwQFBv/EACkRAQACAgEDAwMEAwAAAAAAAAABAgMRBBIhMQUTQRQiURUjcYEyQmH/2gAMAwEAAhEDEQA/APcYCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGIGYRxviX2hYeCwqVvebu29SOgCj6ufKD9P6RtJtt02mZ1eRVXkVNySwBgf3+R+o9IWNSlwpAQEBCeCF8kBAQEBAQmiFICE8kLogZgIGIHAeJ9Zvz8ptH09umF/4vM/wa/xKv1+X1Pb0DTMyxPdI0HE0nGx1rro/ubz0/e7Kw3vhY8e7+pB+XYL+mZiXWME6R/CgOl6hbo7EtjZAa/FYndl/XWfsT/H1m3CsTFtO0z9SpoAN9tdQPoXdVB+8r0UxWt4hsxMuu5Q9TpYp/ErBlP8AIlS2Oa+WnG1XHtYpVfVY433RbEZhsdj2BkW2OY7snU6Op0OvV1d9uj1E6m+2+3Hff07wkY51tuychKlL2MqIvq7MFUD6kwlaTbtD5w8yq5edNiWL+pHDLv8AuILUmvlpu1XHSwUtfULTt/dGxBZufTy7794aritMb03ZWZXUOVtiVg/NmCg/eGa45mezVlarj08OrfVXz7rysReQ7dxv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6smoA913AIIYAEH8xGyLKyvxflLj42Zbj4vRuNG6JkOb0W1lUbIV7kcvhk2nWsNQ8Q5Iy8jFoTEApWgl7sh6i3UDHsAp9OMbJs+NU8S3Y9eErpirdlNYOq2Q4wqwvfc2ce5ZfQfMyzJNtLbQs++4WDIpWt0YAWI/OjIQjcPW3r9CCO31iJWttreVogcf7SNDyM2ilMVFdksLFS4QFeDD1P1IkmHHLjmy48K6V7niUY/4lXdz68rW8zn/AFEy6dKU6YW8KzCkBAQEBAQEBAQPPtY8M5uTyqtow7LOW6axz6WQict1PTRPjUdvi2Mzpjp7uk8Q6dbccDpbN0MimxyW2PTVXViPzPm9I01NWvXdMv69Gdh8HuqV63x3Yol9LsrEB9jxYMoIOx/KXSTCLTpGVdbk5eUtVdjUvRRjJa9i1q25Znfiu5Y8fw9gI0nSq6fBBpxcK3Hpx69Sxvd2ZwdlvK9rUd+Pfkpbvt67GTRFEnWdBvbNyMhcHDza7UoVetbxNRQNy2HTb15D7RomqTladmtRjqmNhKtfJbNLJDY9le/k4WdPdWX1+HaWYJrtv8H6NZi+9M9dWOl7KyYVVjWVU8RsW3IHmbtvsAPKIiFrXTppWiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH//2Q==");
+      background-size: cover;
+    }
+
+    .register-photo .form-container {
+      display: table;
+      max-width: 900px;
+      width: 90%;
+      margin: 0 auto;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .register-photo form {
+      display: table-cell;
+      width: 400px;
+      background-color: #ffffff;
+      padding: 40px 60px;
+      color: #000a14;
+    }
+
+    @media (max-width: 991px) {
+      .register-photo form {
+        padding: 40px;
+      }
+    }
+
+    .register-photo form h2 {
+      font-size: 24px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .register-photo form .form-control {
+      background: #b1caef;
+      border: none;
+      border-bottom: 1px solid #2c82ec;
+      border-radius: 0;
+      box-shadow: none;
+      outline: none;
+      color: inherit;
+      text-indent: 6px;
+      height: 40px;
+    }
+
+    .register-photo form .form-check {
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .register-photo form .btn-primary {
+      background: #f4476b;
+      border: none;
+      border-radius: 4px;
+      padding: 11px;
+      box-shadow: none;
+      margin-top: 35px;
+      text-shadow: none;
+      outline: none !important;
+    }
+
+    .register-photo form .btn-primary:hover,
+    .register-photo form .btn-primary:active {
+      background: #eb3b60;
+    }
+
+    .register-photo form .btn-primary:active {
+      transform: translateY(1px);
+    }
+
+    .register-photo form .already {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      color: #6f7a85;
+      opacity: 0.9;
+      text-decoration: none;
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
+
+  <link
+    rel="stylesheet"
+    href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+  />
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</html>
